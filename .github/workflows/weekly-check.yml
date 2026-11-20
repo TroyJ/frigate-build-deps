@@ -1,0 +1,29 @@
+name: Weekly check
+
+# Every original still there with the same sha256 (git sources: the pinned commit
+# still in the original repository; base images: the pinned digest still at the
+# original registry; Python wheels: PyPI still serving the file with that sha256),
+# and every copy here still present with the same sha256. Opens an issue in this
+# repository (or comments on the open one) when anything is missing or changed.
+
+on:
+  schedule:
+    - cron: "17 3 * * 1"   # Mondays 03:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  packages: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - name: Log in to ghcr.io (our image copies)
+        run: echo "${{ github.token }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+      - name: Check originals and copies
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 tools/mirror.py check --issue

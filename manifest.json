@@ -1,0 +1,623 @@
+{
+ "schema": 1,
+ "description": "Everything Troy's Frigate fork build (Raspberry Pi image and Arm test devcontainer) downloads, with where our copy is. Our copy of a file is https://github.com/TroyJ/frigate-build-deps/releases/download/<release>/<asset>.",
+ "copy_base_url": "https://github.com/TroyJ/frigate-build-deps/releases/download",
+ "files": [
+  {
+   "id": "nginx-source",
+   "kind": "download",
+   "name": "nginx",
+   "description": "nginx web server source",
+   "version": "1.30.7",
+   "release": "nginx-1.30.7",
+   "asset": "nginx-1.30.7.tar.gz",
+   "original_url": "https://nginx.org/download/nginx-1.30.7.tar.gz",
+   "sha256": "2565b5c837050e958f70fb0f73c48e2bca4542ad349fd356f46fb0c72610bc6e",
+   "size": null,
+   "licence": "BSD-2-Clause",
+   "licence_url": "https://nginx.org/LICENSE",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ]
+  },
+  {
+   "id": "nginx-vod-module-source",
+   "kind": "download",
+   "name": "nginx-vod-module",
+   "description": "Video-on-demand nginx module (HLS playback of recordings); dio-az's maintained continuation of kaltura/nginx-vod-module. Full history: github.com/TroyJ/nginx-vod-module",
+   "version": "v1.9.1",
+   "release": "nginx-vod-module-v1.9.1",
+   "asset": "nginx-vod-module-v1.9.1.tar.gz",
+   "original_url": "https://github.com/dio-az/nginx-vod-module/archive/refs/tags/v1.9.1.tar.gz",
+   "sha256": "62870bb0c4001041a459361d9b163a3afe1ec32d06a6b70969826e8ca823c97d",
+   "size": null,
+   "licence": "AGPL-3.0",
+   "licence_url": "https://raw.githubusercontent.com/dio-az/nginx-vod-module/v1.9.1/LICENSE",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ]
+  },
+  {
+   "id": "ngx-devel-kit-source",
+   "kind": "download",
+   "name": "ngx_devel_kit",
+   "description": "nginx development kit (needed by set-misc)",
+   "version": "v0.3.3",
+   "release": "ngx_devel_kit-v0.3.3",
+   "asset": "ngx_devel_kit-v0.3.3.tar.gz",
+   "original_url": "https://github.com/vision5/ngx_devel_kit/archive/refs/tags/v0.3.3.tar.gz",
+   "sha256": "faa2fcd5168b10764d35081356511d5f84db5c526a1aa4b6add2db94b6853b2b",
+   "size": null,
+   "licence": "BSD-3-Clause",
+   "licence_url": "https://raw.githubusercontent.com/vision5/ngx_devel_kit/v0.3.3/LICENSE",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ]
+  },
+  {
+   "id": "set-misc-nginx-module-source",
+   "kind": "download",
+   "name": "set-misc-nginx-module",
+   "description": "nginx set-misc module",
+   "version": "v0.33",
+   "release": "set-misc-nginx-module-v0.33",
+   "asset": "set-misc-nginx-module-v0.33.tar.gz",
+   "original_url": "https://github.com/openresty/set-misc-nginx-module/archive/refs/tags/v0.33.tar.gz",
+   "sha256": "cd5e2cc834bcfa30149e7511f2b5a2183baf0b70dc091af717a89a64e44a2985",
+   "size": null,
+   "licence": "BSD-2-Clause",
+   "licence_url": "https://raw.githubusercontent.com/openresty/set-misc-nginx-module/v0.33/README.markdown",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ],
+   "notes": "Licence text is the 'Copyright and License' section of the README."
+  },
+  {
+   "id": "sqlite-vec-source",
+   "kind": "download",
+   "name": "sqlite-vec",
+   "description": "sqlite-vec (vector search extension for SQLite) source",
+   "version": "v0.1.3",
+   "release": "sqlite-vec-v0.1.3",
+   "asset": "sqlite-vec-v0.1.3.tar.gz",
+   "original_url": "https://github.com/asg017/sqlite-vec/archive/refs/tags/v0.1.3.tar.gz",
+   "sha256": "6cd2946c8fec018704daadfad7d1299a0a637863d4c393114cfcd3b8e140d88e",
+   "size": 547734,
+   "licence": "MIT OR Apache-2.0",
+   "licence_url": "https://raw.githubusercontent.com/asg017/sqlite-vec/v0.1.3/LICENSE-MIT",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ]
+  },
+  {
+   "id": "sqlite-amalgamation-3450300",
+   "kind": "download",
+   "name": "sqlite",
+   "description": "SQLite 3.45.3 amalgamation source, vendored into sqlite-vec",
+   "version": "3.45.3",
+   "release": "sqlite-3.45.3",
+   "asset": "sqlite-amalgamation-3450300.zip",
+   "original_url": "https://www.sqlite.org/2024/sqlite-amalgamation-3450300.zip",
+   "sha256": "ea170e73e447703e8359308ca2e4366a3ae0c4304a8665896f068c736781c651",
+   "size": 2733959,
+   "licence": "blessing (public domain)",
+   "licence_url": "https://www.sqlite.org/copyright.html",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ]
+  },
+  {
+   "id": "sqlite-amalgamation-3460100",
+   "kind": "download",
+   "name": "sqlite",
+   "description": "SQLite 3.46.1 amalgamation source, built into pysqlite3",
+   "version": "3.46.1",
+   "release": "sqlite-3.46.1",
+   "asset": "sqlite-amalgamation-3460100.zip",
+   "original_url": "https://www.sqlite.org/2024/sqlite-amalgamation-3460100.zip",
+   "sha256": "77823cb110929c2bcb0f5d48e4833b5c59a8a6e40cdea3936b99e199dbbe5784",
+   "size": 2764032,
+   "licence": "blessing (public domain)",
+   "licence_url": "https://www.sqlite.org/copyright.html",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ]
+  },
+  {
+   "id": "go2rtc-linux-arm64",
+   "kind": "download",
+   "name": "go2rtc",
+   "description": "go2rtc camera stream relay, Linux arm64 binary",
+   "version": "v1.9.10",
+   "release": "go2rtc-v1.9.10",
+   "asset": "go2rtc_linux_arm64",
+   "original_url": "https://github.com/AlexxIT/go2rtc/releases/download/v1.9.10/go2rtc_linux_arm64",
+   "sha256": "f4e3f56e991d5540c3c4790269044d864acbc3380f9896ef4fe1862c79c66367",
+   "size": 4162604,
+   "licence": "MIT",
+   "licence_url": "https://raw.githubusercontent.com/AlexxIT/go2rtc/v1.9.10/LICENSE",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ]
+  },
+  {
+   "id": "go2rtc-linux-amd64",
+   "kind": "download",
+   "name": "go2rtc",
+   "description": "go2rtc camera stream relay, Linux amd64 binary",
+   "version": "v1.9.10",
+   "release": "go2rtc-v1.9.10",
+   "asset": "go2rtc_linux_amd64",
+   "original_url": "https://github.com/AlexxIT/go2rtc/releases/download/v1.9.10/go2rtc_linux_amd64",
+   "sha256": "825bffa9caf585a008bcdea6b354418263d94aea73674f1a5bcacfb26c2c35f9",
+   "size": 5135608,
+   "licence": "MIT",
+   "licence_url": "https://raw.githubusercontent.com/AlexxIT/go2rtc/v1.9.10/LICENSE",
+   "used_by": [
+    "amd64-images"
+   ]
+  },
+  {
+   "id": "tempio-aarch64",
+   "kind": "download",
+   "name": "tempio",
+   "description": "tempio (Home Assistant config templating tool), aarch64 binary",
+   "version": "2021.09.0",
+   "release": "tempio-2021.09.0",
+   "asset": "tempio_aarch64",
+   "original_url": "https://github.com/home-assistant/tempio/releases/download/2021.09.0/tempio_aarch64",
+   "sha256": "3a5c32981ba68b75ed9b28497429e5a5cecbeb74c3b821b035a48b37609bb895",
+   "size": 4718592,
+   "licence": "Apache-2.0",
+   "licence_url": "https://raw.githubusercontent.com/home-assistant/tempio/2021.09.0/LICENSE",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ]
+  },
+  {
+   "id": "tempio-amd64",
+   "kind": "download",
+   "name": "tempio",
+   "description": "tempio (Home Assistant config templating tool), amd64 binary",
+   "version": "2021.09.0",
+   "release": "tempio-2021.09.0",
+   "asset": "tempio_amd64",
+   "original_url": "https://github.com/home-assistant/tempio/releases/download/2021.09.0/tempio_amd64",
+   "sha256": "b7b93ebfd24c1161cec7aecfad62ab51f2241149358cef354b86cdbc6a60546f",
+   "size": 4677632,
+   "licence": "Apache-2.0",
+   "licence_url": "https://raw.githubusercontent.com/home-assistant/tempio/2021.09.0/LICENSE",
+   "used_by": [
+    "amd64-images"
+   ]
+  },
+  {
+   "id": "libusb-source",
+   "kind": "download",
+   "name": "libusb",
+   "description": "libusb source (Coral USB without udev)",
+   "version": "v1.0.26",
+   "release": "libusb-v1.0.26",
+   "asset": "libusb-v1.0.26.zip",
+   "original_url": "https://github.com/libusb/libusb/archive/v1.0.26.zip",
+   "sha256": "4175f942e74f3c34b71d01b107d33e713f9ff47563f49bcc6e8b2534f414dd54",
+   "size": 536844,
+   "licence": "LGPL-2.1-or-later",
+   "licence_url": "https://raw.githubusercontent.com/libusb/libusb/v1.0.26/COPYING",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ]
+  },
+  {
+   "id": "coral-edgetpu-model",
+   "kind": "download",
+   "name": "coral test_data",
+   "description": "Coral Edge TPU detection model (SSDLite MobileDet, COCO)",
+   "version": "release-frogfish",
+   "release": "coral-models-release-frogfish",
+   "asset": "ssdlite_mobiledet_coco_qat_postprocess_edgetpu.tflite",
+   "original_url": "https://github.com/google-coral/test_data/raw/release-frogfish/ssdlite_mobiledet_coco_qat_postprocess_edgetpu.tflite",
+   "sha256": "4a2be2bbb614e576d56dcb914fa52752bf0f13411512710d355d97faa1b35641",
+   "size": 5371304,
+   "licence": "Apache-2.0",
+   "licence_url": "https://raw.githubusercontent.com/google-coral/test_data/release-frogfish/LICENSE",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ]
+  },
+  {
+   "id": "coral-cpu-model",
+   "kind": "download",
+   "name": "coral test_data",
+   "description": "CPU detection model, Frigate's default detector (SSDLite MobileDet, COCO)",
+   "version": "release-frogfish",
+   "release": "coral-models-release-frogfish",
+   "asset": "ssdlite_mobiledet_coco_qat_postprocess.tflite",
+   "original_url": "https://github.com/google-coral/test_data/raw/release-frogfish/ssdlite_mobiledet_coco_qat_postprocess.tflite",
+   "sha256": "90bb33a634e041914cc1819aa5df99818e6c396c4d2db952c0fd7a9cffc4724f",
+   "size": 4281768,
+   "licence": "Apache-2.0",
+   "licence_url": "https://raw.githubusercontent.com/google-coral/test_data/release-frogfish/LICENSE",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ]
+  },
+  {
+   "id": "yamnet-model",
+   "kind": "download",
+   "name": "YAMNet",
+   "description": "YAMNet audio classification model (TFLite), Kaggle google/yamnet tfLite classification-tflite version 1",
+   "version": "1",
+   "release": "yamnet-tflite-classification-1",
+   "asset": "yamnet-classification-tflite-1.tar.gz",
+   "original_url": "https://www.kaggle.com/api/v1/models/google/yamnet/tfLite/classification-tflite/1/download",
+   "sha256": "1b971b2132760273a5fb8f5dc504e86783b27853bb3135d555ae06f1e1e365f3",
+   "size": 3240957,
+   "licence": "Apache-2.0",
+   "licence_url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ],
+   "notes": "Kaggle answers 404 to HEAD; a GET redirects to a signed Google Storage URL. Licence per the Kaggle model page (Apache 2.0)."
+  },
+  {
+   "id": "s6-overlay-noarch",
+   "kind": "download",
+   "name": "s6-overlay",
+   "description": "s6-overlay process supervisor, noarch part",
+   "version": "v3.2.1.0",
+   "release": "s6-overlay-v3.2.1.0",
+   "asset": "s6-overlay-noarch.tar.xz",
+   "original_url": "https://github.com/just-containers/s6-overlay/releases/download/v3.2.1.0/s6-overlay-noarch.tar.xz",
+   "sha256": "42e038a9a00fc0fef70bf0bc42f625a9c14f8ecdfe77d4ad93281edf717e10c5",
+   "size": 7012,
+   "licence": "ISC",
+   "licence_url": "https://raw.githubusercontent.com/just-containers/s6-overlay/v3.2.1.0/COPYING",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ]
+  },
+  {
+   "id": "s6-overlay-aarch64",
+   "kind": "download",
+   "name": "s6-overlay",
+   "description": "s6-overlay process supervisor, aarch64 part",
+   "version": "v3.2.1.0",
+   "release": "s6-overlay-v3.2.1.0",
+   "asset": "s6-overlay-aarch64.tar.xz",
+   "original_url": "https://github.com/just-containers/s6-overlay/releases/download/v3.2.1.0/s6-overlay-aarch64.tar.xz",
+   "sha256": "c8fd6b1f0380d399422fc986a1e6799f6a287e2cfa24813ad0b6a4fb4fa755cc",
+   "size": 593776,
+   "licence": "ISC",
+   "licence_url": "https://raw.githubusercontent.com/just-containers/s6-overlay/v3.2.1.0/COPYING",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ]
+  },
+  {
+   "id": "s6-overlay-x86_64",
+   "kind": "download",
+   "name": "s6-overlay",
+   "description": "s6-overlay process supervisor, x86_64 part",
+   "version": "v3.2.1.0",
+   "release": "s6-overlay-v3.2.1.0",
+   "asset": "s6-overlay-x86_64.tar.xz",
+   "original_url": "https://github.com/just-containers/s6-overlay/releases/download/v3.2.1.0/s6-overlay-x86_64.tar.xz",
+   "sha256": "8bcbc2cada58426f976b159dcc4e06cbb1454d5f39252b3bb0c778ccf71c9435",
+   "size": 660024,
+   "licence": "ISC",
+   "licence_url": "https://raw.githubusercontent.com/just-containers/s6-overlay/v3.2.1.0/COPYING",
+   "used_by": [
+    "amd64-images"
+   ]
+  },
+  {
+   "id": "libedgetpu-arm64",
+   "kind": "download",
+   "name": "libedgetpu",
+   "description": "Coral Edge TPU runtime (libedgetpu1-max .deb, bookworm arm64)",
+   "version": "16.0TF2.17.1-1",
+   "release": "libedgetpu-16.0TF2.17.1-1",
+   "asset": "libedgetpu1-max_16.0tf2.17.1-1.bookworm_arm64.deb",
+   "original_url": "https://github.com/feranick/libedgetpu/releases/download/16.0TF2.17.1-1/libedgetpu1-max_16.0tf2.17.1-1.bookworm_arm64.deb",
+   "sha256": "eab8aa4576b4dbf738135d8094f32270b24117f77147d25cbe0f49d0144d85f2",
+   "size": 332888,
+   "licence": "Apache-2.0",
+   "licence_url": "https://raw.githubusercontent.com/feranick/libedgetpu/16.0TF2.17.1-1/LICENSE",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ]
+  },
+  {
+   "id": "libedgetpu-amd64",
+   "kind": "download",
+   "name": "libedgetpu",
+   "description": "Coral Edge TPU runtime (libedgetpu1-max .deb, bookworm amd64)",
+   "version": "16.0TF2.17.1-1",
+   "release": "libedgetpu-16.0TF2.17.1-1",
+   "asset": "libedgetpu1-max_16.0tf2.17.1-1.bookworm_amd64.deb",
+   "original_url": "https://github.com/feranick/libedgetpu/releases/download/16.0TF2.17.1-1/libedgetpu1-max_16.0tf2.17.1-1.bookworm_amd64.deb",
+   "sha256": "63fd00989d29160fa9894e115156a9abe456e88751fc9be89d26e4696200441b",
+   "size": 381660,
+   "licence": "Apache-2.0",
+   "licence_url": "https://raw.githubusercontent.com/feranick/libedgetpu/16.0TF2.17.1-1/LICENSE",
+   "used_by": [
+    "amd64-images"
+   ]
+  },
+  {
+   "id": "yq-linux-arm64",
+   "kind": "download",
+   "name": "yq",
+   "description": "yq YAML command-line tool, Linux arm64",
+   "version": "v4.48.2",
+   "release": "yq-v4.48.2",
+   "asset": "yq_linux_arm64",
+   "original_url": "https://github.com/mikefarah/yq/releases/download/v4.48.2/yq_linux_arm64",
+   "sha256": "3c21630fda217239a5b7d718d08f08e02503098230b3abd49195d315a6dcfe45",
+   "size": 10813624,
+   "licence": "MIT",
+   "licence_url": "https://raw.githubusercontent.com/mikefarah/yq/v4.48.2/LICENSE",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ]
+  },
+  {
+   "id": "yq-linux-amd64",
+   "kind": "download",
+   "name": "yq",
+   "description": "yq YAML command-line tool, Linux amd64",
+   "version": "v4.48.2",
+   "release": "yq-v4.48.2",
+   "asset": "yq_linux_amd64",
+   "original_url": "https://github.com/mikefarah/yq/releases/download/v4.48.2/yq_linux_amd64",
+   "sha256": "0ffc35320180d4911bc3a772934da508715e08af444cb33d4d43660065e25bcc",
+   "size": 11501752,
+   "licence": "MIT",
+   "licence_url": "https://raw.githubusercontent.com/mikefarah/yq/v4.48.2/LICENSE",
+   "used_by": [
+    "amd64-images"
+   ]
+  },
+  {
+   "id": "get-pip",
+   "kind": "download",
+   "name": "get-pip.py",
+   "description": "pip installer script, frozen copy of bootstrap.pypa.io/get-pip.py as of 2026-11-03 (Last-Modified)",
+   "version": "2026-11-03",
+   "release": "get-pip-2026-11-03",
+   "asset": "get-pip.py",
+   "original_url": "https://bootstrap.pypa.io/get-pip.py",
+   "sha256": "356e0d0de21cdc348c3394084d90939b85e4246c4d14c76aee6ca4f46646ea98",
+   "size": 2397294,
+   "licence": "MIT",
+   "licence_url": "https://raw.githubusercontent.com/pypa/get-pip/main/LICENSE.txt",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ],
+   "notes": "The original URL always serves the latest get-pip.py, so the weekly check reports a change whenever pip releases; our copy stays frozen. Refresh it deliberately."
+  },
+  {
+   "id": "nodejs-linux-arm64",
+   "kind": "download",
+   "name": "Node.js",
+   "description": "Node.js 20 for the test devcontainer (replaces NodeSource's apt repository)",
+   "version": "v20.20.2",
+   "release": "nodejs-v20.20.2",
+   "asset": "node-v20.20.2-linux-arm64.tar.xz",
+   "original_url": "https://nodejs.org/dist/v20.20.2/node-v20.20.2-linux-arm64.tar.xz",
+   "sha256": "73093db209e4e9e09dd7d15a47aeaab1b74833830df03efa5f942a1122c5fa71",
+   "size": 25271160,
+   "licence": "MIT",
+   "licence_url": "https://raw.githubusercontent.com/nodejs/node/v20.20.2/LICENSE",
+   "used_by": [
+    "test-devcontainer"
+   ],
+   "notes": "sha256 cross-checked against https://nodejs.org/dist/v20.20.2/SHASUMS256.txt"
+  },
+  {
+   "id": "rpi-ffmpeg-source",
+   "kind": "git-archive",
+   "name": "rpi-ffmpeg",
+   "description": "Raspberry Pi ffmpeg source (jc-kynesim), patched and built by docker/rpi/build_ffmpeg.sh",
+   "version": "9e9bbb1 (branch test/7.1.2/main, 2026-01-29)",
+   "release": "rpi-ffmpeg-9e9bbb1",
+   "asset": "rpi-ffmpeg-9e9bbb199ce41f2ed2f87628acc755ca099e3a96.tar.gz",
+   "git_url": "https://github.com/jc-kynesim/rpi-ffmpeg.git",
+   "commit": "9e9bbb199ce41f2ed2f87628acc755ca099e3a96",
+   "archive_prefix": "rpi-ffmpeg/",
+   "sha256": "",
+   "size": null,
+   "licence": "LGPL-2.1-or-later (GPL with --enable-gpl)",
+   "licence_url": "https://raw.githubusercontent.com/jc-kynesim/rpi-ffmpeg/9e9bbb199ce41f2ed2f87628acc755ca099e3a96/LICENSE.md",
+   "used_by": [
+    "pi-image"
+   ],
+   "clone": {
+    "branch": "test/7.1.2/main",
+    "depth": 50
+   },
+   "notes": "git archive of the commit. A shallow clone of the branch (what the build used before) gives ffmpeg the version string 'pi/7.1.2/rpi_28-1-g9e9bbb1'; build_ffmpeg.sh writes it to VERSION so the binary reports the same."
+  },
+  {
+   "id": "pysqlite3-source",
+   "kind": "git-archive",
+   "name": "pysqlite3",
+   "description": "pysqlite3 (Python SQLite binding, built against our SQLite) source",
+   "version": "0.5.3 (67014040)",
+   "release": "pysqlite3-0.5.3",
+   "asset": "pysqlite3-0.5.3-67014040e4eb5ab2abc0c7bdcf2dfefea13332ab.tar.gz",
+   "git_url": "https://github.com/coleifer/pysqlite3.git",
+   "commit": "67014040e4eb5ab2abc0c7bdcf2dfefea13332ab",
+   "archive_prefix": "pysqlite3/",
+   "sha256": "",
+   "size": null,
+   "licence": "Zlib",
+   "licence_url": "https://raw.githubusercontent.com/coleifer/pysqlite3/67014040e4eb5ab2abc0c7bdcf2dfefea13332ab/LICENSE",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ]
+  },
+  {
+   "id": "py3nvml-source",
+   "kind": "git-archive",
+   "name": "py3nvml",
+   "description": "py3nvml (NVIDIA GPU stats for Python) source, pinned to a commit (the build used to take the default branch)",
+   "version": "0545dfd",
+   "release": "py3nvml-0545dfd",
+   "asset": "py3nvml-0545dfd39858c1552aaabc52ea3fbcb7f5714853.tar.gz",
+   "git_url": "https://github.com/fbcotter/py3nvml.git",
+   "commit": "0545dfd39858c1552aaabc52ea3fbcb7f5714853",
+   "archive_prefix": "py3nvml/",
+   "sha256": "",
+   "size": null,
+   "licence": "BSD-3-Clause",
+   "licence_url": "https://raw.githubusercontent.com/fbcotter/py3nvml/0545dfd39858c1552aaabc52ea3fbcb7f5714853/LICENSE",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ],
+   "notes": "Built into a wheel in the Python wheelhouse; the wheel is what the build installs."
+  }
+ ],
+ "images": [
+  {
+   "id": "debian-12",
+   "name": "Debian 12",
+   "original": "docker.io/library/debian:12",
+   "digest": "sha256:268fb24c39bca92d326dd83ea3abebe4a3f7751c804ffef23bb6d857dd343ff8",
+   "copy": "ghcr.io/troyj/debian:12",
+   "licence": "Debian (DFSG; per package)",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ]
+  },
+  {
+   "id": "debian-12-slim",
+   "name": "Debian 12 slim",
+   "original": "docker.io/library/debian:12-slim",
+   "digest": "sha256:734a72b3d6142a71993b4bc580ca01d8ca687f77a2c422d96a961d3376b179bc",
+   "copy": "ghcr.io/troyj/debian:12-slim",
+   "licence": "Debian (DFSG; per package)",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ]
+  },
+  {
+   "id": "node-20",
+   "name": "Node.js 20 (web UI build)",
+   "original": "docker.io/library/node:20",
+   "digest": "sha256:8f693eaa7e0a8e71560c9a82b55fd54c2ae920a2ba5d2cde28bac7d1c01c9ba5",
+   "copy": "ghcr.io/troyj/node:20",
+   "licence": "MIT (Node.js); Debian packages per package",
+   "used_by": [
+    "pi-image"
+   ]
+  },
+  {
+   "id": "dockerfile-1.6",
+   "name": "Dockerfile syntax front-end 1.6",
+   "original": "docker.io/docker/dockerfile:1.6",
+   "digest": "sha256:ac85f380a63b13dfcefa89046420e1781752bab202122f8f50032edf31be0021",
+   "copy": "ghcr.io/troyj/dockerfile:1.6",
+   "licence": "Apache-2.0",
+   "used_by": [
+    "pi-image",
+    "test-devcontainer"
+   ]
+  },
+  {
+   "id": "dockerfile-1.4",
+   "name": "Dockerfile syntax front-end 1.4",
+   "original": "docker.io/docker/dockerfile:1.4",
+   "digest": "sha256:9ba7531bd80fb0a858632727cf7a112fbfd19b17e94c4e84ced81e24ef1a0dbc",
+   "copy": "ghcr.io/troyj/dockerfile:1.4",
+   "licence": "Apache-2.0",
+   "used_by": [
+    "pi-image"
+   ]
+  },
+  {
+   "id": "eclipse-mosquitto-2.0",
+   "name": "Mosquitto MQTT broker (tests)",
+   "original": "docker.io/library/eclipse-mosquitto:2.0",
+   "digest": "sha256:6a332cc7a8dbe011cbc076180cbb76b37c6f0f55809682ea08e7980ef0112ad9",
+   "copy": "ghcr.io/troyj/eclipse-mosquitto:2.0",
+   "licence": "EPL-2.0 OR BSD-3-Clause (EDL-1.0)",
+   "used_by": [
+    "test-devcontainer"
+   ]
+  },
+  {
+   "id": "devcontainer-feature-common-utils-2",
+   "name": "Devcontainer feature common-utils 2.7.1 (tests)",
+   "original": "ghcr.io/devcontainers/features/common-utils:2",
+   "digest": "sha256:e76a6a8a35d1ad824daad1540725e0ec9f8ed2dc00d2850e990a9830013c7d08",
+   "copy": "ghcr.io/troyj/devcontainer-features/common-utils:2",
+   "licence": "MIT",
+   "used_by": [
+    "test-devcontainer"
+   ]
+  }
+ ],
+ "repositories": [
+  {
+   "id": "nginx-vod-module",
+   "name": "nginx-vod-module",
+   "copy": "https://github.com/TroyJ/nginx-vod-module",
+   "originals": [
+    "https://github.com/dio-az/nginx-vod-module",
+    "https://github.com/StayLive/nginx-vod-module"
+   ],
+   "licence": "AGPL-3.0",
+   "notes": "Full history of dio-az/nginx-vod-module (all branches; tags v1.x) plus Kaltura's branches from StayLive under kaltura/*. Kaltura's tags 1.0-1.33 are identical (same tag objects and commits) in both originals; 1.31 = 6c305a78, last verified Kaltura commit 26f0687 is in main. The build fetches the v1.9.1 archive from this repo's release files, not from this repository."
+  }
+ ],
+ "debian": {
+  "snapshot": "20261119T000000Z",
+  "archives": [
+   "http://snapshot.debian.org/archive/debian/20261119T000000Z",
+   "http://snapshot.debian.org/archive/debian-security/20261119T000000Z"
+  ],
+  "notes": "Debian packages are not copied: the builds read Debian's dated archive frozen at this time, so every build gets the same package versions."
+ },
+ "not_copied": [
+  {
+   "what": "npm packages (web/package-lock.json)",
+   "why": "Decision: still fetched from registry.npmjs.org; the lockfile pins a sha512 for each of the 749."
+  },
+  {
+   "what": "Debian apt packages",
+   "why": "Read from snapshot.debian.org frozen at debian.snapshot (decision)."
+  },
+  {
+   "what": "Hailo, MemryX, generic ffmpeg builds, OpenVINO model and its Python list",
+   "why": "No longer installed in the Pi image or the test devcontainer (branch deps/pi-trim, and the devcontainer now takes the same switches)."
+  },
+  {
+   "what": "amd64-only Intel GPU/NPU packages and Intel's apt repository, amd64 Python wheels",
+   "why": "Only the generic amd64 images use them; the Pi image and the Arm test devcontainer never do. amd64 builds still fetch them from the originals."
+  }
+ ]
+}

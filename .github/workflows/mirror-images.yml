@@ -1,0 +1,47 @@
+name: Copy base images
+
+# Copies each base image in manifest.json (the whole multi-platform index, so the
+# digest stays the same) from its original registry to ghcr.io/troyj, and checks that
+# the copy has the pinned digest. Dockerfiles use the copy by that digest.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  copy:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install crane
+        run: |
+          # go-containerregistry v0.20.6, sha256 from the project's checksums.txt
+          curl -fsSL -o crane.tgz https://github.com/google/go-containerregistry/releases/download/v0.20.6/go-containerregistry_Linux_x86_64.tar.gz
+          echo "${CRANE_SHA256}  crane.tgz" | sha256sum -c -
+          tar -xzf crane.tgz crane && sudo mv crane /usr/local/bin/
+        env:
+          CRANE_SHA256: c1d593d01551f2c9a3df5ca0a0be4385a839bd9b86d4a76e18d7b17d16559127
+      - name: Log in to ghcr.io
+        run: echo "${{ github.token }}" | crane auth login ghcr.io -u "${{ github.actor }}" --password-stdin
+      - name: Copy by digest
+        run: |
+          set -euo pipefail
+          jq -r '.images[] | [.original, .digest, .copy] | @tsv' manifest.json |
+          while IFS=$'\t' read -r orig digest copy; do
+            repo="${orig%:*}"
+            echo "== $repo@$digest -> $copy"
+            crane copy "$repo@$digest" "$copy"
+            got="$(crane digest "$copy")"
+            if [ "$got" != "$digest" ]; then echo "digest mismatch: $copy is $got, want $digest"; exit 1; fi
+          done
+      - name: Package visibility
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for p in $(jq -r '.images[].copy | sub("^ghcr.io/troyj/";"") | sub(":[^:]*$";"")' manifest.json | sort -u); do
+            enc="${p//\//%2F}"
+            echo "$p: $(gh api "/users/TroyJ/packages/container/$enc" --jq .visibility 2>&1 || true)"
+          done
