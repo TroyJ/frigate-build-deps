@@ -33,7 +33,13 @@ jobs:
           while IFS=$'\t' read -r orig digest copy; do
             repo="${orig%:*}"
             echo "== $repo@$digest -> $copy"
-            crane copy "$repo@$digest" "$copy"
+            # The first push to a new ghcr.io package is sometimes refused while
+            # GitHub links it to this repository; a retry then succeeds.
+            for try in 1 2 3 4; do
+              crane copy "$repo@$digest" "$copy" && break
+              [ "$try" = 4 ] && exit 1
+              sleep 20
+            done
             got="$(crane digest "$copy")"
             if [ "$got" != "$digest" ]; then echo "digest mismatch: $copy is $got, want $digest"; exit 1; fi
           done
