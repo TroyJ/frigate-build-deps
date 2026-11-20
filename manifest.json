@@ -13,7 +13,7 @@
    "asset": "nginx-1.30.7.tar.gz",
    "original_url": "https://nginx.org/download/nginx-1.30.7.tar.gz",
    "sha256": "2565b5c837050e958f70fb0f73c48e2bca4542ad349fd356f46fb0c72610bc6e",
-   "size": null,
+   "size": 1333178,
    "licence": "BSD-2-Clause",
    "licence_url": "https://nginx.org/LICENSE",
    "used_by": [
@@ -31,7 +31,7 @@
    "asset": "nginx-vod-module-v1.9.1.tar.gz",
    "original_url": "https://github.com/dio-az/nginx-vod-module/archive/refs/tags/v1.9.1.tar.gz",
    "sha256": "62870bb0c4001041a459361d9b163a3afe1ec32d06a6b70969826e8ca823c97d",
-   "size": null,
+   "size": 461511,
    "licence": "AGPL-3.0",
    "licence_url": "https://raw.githubusercontent.com/dio-az/nginx-vod-module/v1.9.1/LICENSE",
    "used_by": [
@@ -49,7 +49,7 @@
    "asset": "ngx_devel_kit-v0.3.3.tar.gz",
    "original_url": "https://github.com/vision5/ngx_devel_kit/archive/refs/tags/v0.3.3.tar.gz",
    "sha256": "faa2fcd5168b10764d35081356511d5f84db5c526a1aa4b6add2db94b6853b2b",
-   "size": null,
+   "size": 66561,
    "licence": "BSD-3-Clause",
    "licence_url": "https://raw.githubusercontent.com/vision5/ngx_devel_kit/v0.3.3/LICENSE",
    "used_by": [
@@ -67,7 +67,7 @@
    "asset": "set-misc-nginx-module-v0.33.tar.gz",
    "original_url": "https://github.com/openresty/set-misc-nginx-module/archive/refs/tags/v0.33.tar.gz",
    "sha256": "cd5e2cc834bcfa30149e7511f2b5a2183baf0b70dc091af717a89a64e44a2985",
-   "size": null,
+   "size": 30084,
    "licence": "BSD-2-Clause",
    "licence_url": "https://raw.githubusercontent.com/openresty/set-misc-nginx-module/v0.33/README.markdown",
    "used_by": [
@@ -444,8 +444,8 @@
    "git_url": "https://github.com/jc-kynesim/rpi-ffmpeg.git",
    "commit": "9e9bbb199ce41f2ed2f87628acc755ca099e3a96",
    "archive_prefix": "rpi-ffmpeg/",
-   "sha256": "",
-   "size": null,
+   "sha256": "00e450bb656c91d66de7b3afa1631859a0d45f1a856afe5b7ac0c80c3741943e",
+   "size": 16038479,
    "licence": "LGPL-2.1-or-later (GPL with --enable-gpl)",
    "licence_url": "https://raw.githubusercontent.com/jc-kynesim/rpi-ffmpeg/9e9bbb199ce41f2ed2f87628acc755ca099e3a96/LICENSE.md",
    "used_by": [
@@ -468,8 +468,8 @@
    "git_url": "https://github.com/coleifer/pysqlite3.git",
    "commit": "67014040e4eb5ab2abc0c7bdcf2dfefea13332ab",
    "archive_prefix": "pysqlite3/",
-   "sha256": "",
-   "size": null,
+   "sha256": "290c078d148b962b42297db7f4b35950e76794a283d467c2f3a5d6c8cc8e0ca0",
+   "size": 64484,
    "licence": "Zlib",
    "licence_url": "https://raw.githubusercontent.com/coleifer/pysqlite3/67014040e4eb5ab2abc0c7bdcf2dfefea13332ab/LICENSE",
    "used_by": [
@@ -488,8 +488,8 @@
    "git_url": "https://github.com/fbcotter/py3nvml.git",
    "commit": "0545dfd39858c1552aaabc52ea3fbcb7f5714853",
    "archive_prefix": "py3nvml/",
-   "sha256": "",
-   "size": null,
+   "sha256": "c683ff840e9129e60b9d582b10e355ae30caa42ed3815dbe956901276f2bdd57",
+   "size": 91841,
    "licence": "BSD-3-Clause",
    "licence_url": "https://raw.githubusercontent.com/fbcotter/py3nvml/0545dfd39858c1552aaabc52ea3fbcb7f5714853/LICENSE",
    "used_by": [
