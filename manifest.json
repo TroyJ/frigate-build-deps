@@ -405,8 +405,8 @@
    "release": "ffmpeg-builds-arm64",
    "asset": "ffmpeg-n5.1-2-g915ef932a3-linuxarm64-gpl-5.1.tar.xz",
    "original_url": "https://github.com/NickM-27/FFmpeg-Builds/releases/download/autobuild-2022-07-31-12-37/ffmpeg-n5.1-2-g915ef932a3-linuxarm64-gpl-5.1.tar.xz",
-   "sha256": "",
-   "size": null,
+   "sha256": "57ee475407bad49910ba9b946428396e30cf075ea28a7912fbe1aa2578085af0",
+   "size": 49249308,
    "licence": "GPL-3.0-or-later (ffmpeg built with --enable-gpl); build scripts MIT",
    "licence_url": "https://raw.githubusercontent.com/FFmpeg/FFmpeg/n7.0.2/COPYING.GPLv3",
    "used_by": [
@@ -423,8 +423,8 @@
    "release": "ffmpeg-builds-arm64",
    "asset": "ffmpeg-n7.0.2-18-g3e6cec1286-linuxarm64-gpl-7.0.tar.xz",
    "original_url": "https://github.com/NickM-27/FFmpeg-Builds/releases/download/autobuild-2024-09-19-12-51/ffmpeg-n7.0.2-18-g3e6cec1286-linuxarm64-gpl-7.0.tar.xz",
-   "sha256": "",
-   "size": null,
+   "sha256": "16c8b04e9d0ea9c769ad964c4c453fcf05121a1947237329d2e9d8a5e43e2a3c",
+   "size": 85106610,
    "licence": "GPL-3.0-or-later (ffmpeg built with --enable-gpl); build scripts MIT",
    "licence_url": "https://raw.githubusercontent.com/FFmpeg/FFmpeg/n7.0.2/COPYING.GPLv3",
    "used_by": [
