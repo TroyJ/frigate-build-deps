@@ -1,0 +1,49 @@
+name: Python wheelhouse
+
+# Builds the exact Python packages of python/*-cp311-aarch64.lock in our Debian 12
+# copy on an Arm runner (tools/build_wheelhouse.sh), uploads them as release files of
+# one release, records each in manifest.json and writes the fork's lock files
+# (python/fork/), then commits both. Re-running with the same release only uploads
+# what is missing.
+
+on:
+  workflow_dispatch:
+    inputs:
+      release:
+        description: "Release tag for this wheelhouse"
+        required: true
+        default: "python-cp311-aarch64-2026-11-20"
+
+permissions:
+  contents: write
+  packages: read
+
+concurrency:
+  group: manifest-writer
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v6
+      - name: Build the wheelhouse in Debian 12
+        run: |
+          set -euo pipefail
+          echo "${{ github.token }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+          img="$(jq -r '.images[] | select(.id=="debian-12") | "\(.copy | sub(":[^:]*$";""))@\(.digest)"' manifest.json)"
+          docker run --rm --platform linux/arm64 -v "$PWD:/w" -w /w "$img" tools/build_wheelhouse.sh
+      - name: Upload and record
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 tools/wheelhouse.py out "${{ inputs.release }}" --upload
+      - name: Commit manifest and fork lock files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add manifest.json python/fork
+          if ! git diff --cached --quiet; then
+            git commit -m "Wheelhouse ${{ inputs.release }}: manifest entries and fork lock files (run ${{ github.run_id }})"
+            git pull --rebase && git push
+          fi

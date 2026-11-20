@@ -1,0 +1,3 @@
+# = the fork's docker/main/requirements-dev.txt (devcontainer stage).
+ruff == 0.15.22
+types-peewee == 3.17.*

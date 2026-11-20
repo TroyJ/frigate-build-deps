@@ -230,7 +230,7 @@
    "sha256": "4a2be2bbb614e576d56dcb914fa52752bf0f13411512710d355d97faa1b35641",
    "size": 5371304,
    "licence": "Apache-2.0",
-   "licence_url": "https://raw.githubusercontent.com/google-coral/test_data/release-frogfish/LICENSE",
+   "licence_url": "https://raw.githubusercontent.com/google-coral/test_data/master/LICENSE",
    "used_by": [
     "pi-image",
     "test-devcontainer"
@@ -248,7 +248,7 @@
    "sha256": "90bb33a634e041914cc1819aa5df99818e6c396c4d2db952c0fd7a9cffc4724f",
    "size": 4281768,
    "licence": "Apache-2.0",
-   "licence_url": "https://raw.githubusercontent.com/google-coral/test_data/release-frogfish/LICENSE",
+   "licence_url": "https://raw.githubusercontent.com/google-coral/test_data/master/LICENSE",
    "used_by": [
     "pi-image",
     "test-devcontainer"

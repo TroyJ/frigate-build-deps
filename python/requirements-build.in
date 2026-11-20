@@ -1,0 +1,6 @@
+# Build tools the wheels stage installs first: pip itself (get-pip.py installs it),
+# setuptools 77.0.3 (the fork pins it in get-pip), wheel, and docker/main/requirements.txt.
+pip
+setuptools == 77.0.3
+wheel
+scikit-build == 0.18.*
