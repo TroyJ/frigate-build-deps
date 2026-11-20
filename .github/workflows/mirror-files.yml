@@ -12,6 +12,10 @@ on:
         description: "Manifest ids to copy (space-separated; empty = everything missing)"
         required: false
         default: ""
+      hash_first:
+        description: "Ids whose sha256 is still empty: hash the original on the runner first (trust on first use; for files too big to hash elsewhere and with no published checksum)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -25,6 +29,9 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
+      - name: Hash originals first (trust on first use)
+        if: inputs.hash_first != ''
+        run: python3 tools/mirror.py hash --write ${{ inputs.hash_first }}
       - name: Copy missing files
         env:
           GH_TOKEN: ${{ github.token }}

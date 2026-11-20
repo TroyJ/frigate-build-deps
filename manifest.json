@@ -397,6 +397,42 @@
    ]
   },
   {
+   "id": "ffmpeg-generic-5.1-arm64",
+   "kind": "download",
+   "name": "ffmpeg generic builds",
+   "description": "Generic ffmpeg 5.1 build for linux arm64 (NickM-27/FFmpeg-Builds), installed as /usr/lib/ffmpeg/5.0 in the test devcontainer only (go2rtc's start script needs an ffmpeg); the Pi image runs its own",
+   "version": "autobuild-2022-07-31-12-37",
+   "release": "ffmpeg-builds-arm64",
+   "asset": "ffmpeg-n5.1-2-g915ef932a3-linuxarm64-gpl-5.1.tar.xz",
+   "original_url": "https://github.com/NickM-27/FFmpeg-Builds/releases/download/autobuild-2022-07-31-12-37/ffmpeg-n5.1-2-g915ef932a3-linuxarm64-gpl-5.1.tar.xz",
+   "sha256": "",
+   "size": null,
+   "licence": "GPL-3.0-or-later (ffmpeg built with --enable-gpl); build scripts MIT",
+   "licence_url": "https://raw.githubusercontent.com/FFmpeg/FFmpeg/n7.0.2/COPYING.GPLv3",
+   "used_by": [
+    "test-devcontainer"
+   ],
+   "notes": "Hashed on GitHub's runner on first copy (no checksum published), then downloaded again for the copy and compared."
+  },
+  {
+   "id": "ffmpeg-generic-7.0-arm64",
+   "kind": "download",
+   "name": "ffmpeg generic builds",
+   "description": "Generic ffmpeg 7.0 build for linux arm64 (NickM-27/FFmpeg-Builds), installed as /usr/lib/ffmpeg/7.0 in the test devcontainer only (go2rtc's start script needs an ffmpeg); the Pi image runs its own",
+   "version": "autobuild-2024-09-19-12-51",
+   "release": "ffmpeg-builds-arm64",
+   "asset": "ffmpeg-n7.0.2-18-g3e6cec1286-linuxarm64-gpl-7.0.tar.xz",
+   "original_url": "https://github.com/NickM-27/FFmpeg-Builds/releases/download/autobuild-2024-09-19-12-51/ffmpeg-n7.0.2-18-g3e6cec1286-linuxarm64-gpl-7.0.tar.xz",
+   "sha256": "",
+   "size": null,
+   "licence": "GPL-3.0-or-later (ffmpeg built with --enable-gpl); build scripts MIT",
+   "licence_url": "https://raw.githubusercontent.com/FFmpeg/FFmpeg/n7.0.2/COPYING.GPLv3",
+   "used_by": [
+    "test-devcontainer"
+   ],
+   "notes": "Hashed on GitHub's runner on first copy (no checksum published), then downloaded again for the copy and compared."
+  },
+  {
    "id": "get-pip",
    "kind": "download",
    "name": "get-pip.py",
@@ -4598,12 +4634,12 @@
    "why": "Read from snapshot.debian.org frozen at debian.snapshot (decision)."
   },
   {
-   "what": "Hailo, MemryX, generic ffmpeg builds, OpenVINO model and its Python list",
-   "why": "No longer installed in the Pi image or the test devcontainer (branch deps/pi-trim, and the devcontainer now takes the same switches)."
-  },
-  {
    "what": "amd64-only Intel GPU/NPU packages and Intel's apt repository, amd64 Python wheels",
    "why": "Only the generic amd64 images use them; the Pi image and the Arm test devcontainer never do. amd64 builds still fetch them from the originals."
+  },
+  {
+   "what": "Hailo, MemryX, the OpenVINO model and its Python list; the generic ffmpeg builds for amd64",
+   "why": "Not installed in the Pi image or the Arm test devcontainer. (The arm64 generic ffmpeg builds are copied: the test devcontainer keeps them for go2rtc.)"
   }
  ]
 }
